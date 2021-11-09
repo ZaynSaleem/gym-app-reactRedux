@@ -1,0 +1,232 @@
+/* body {
+  background-color: rgb(148, 148, 148);
+  min-height: 100vh;
+} */
+
+.flex-signup-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(148, 148, 148);
+  min-height: 100vh;
+}
+.row-flex {
+  margin-top: 50px;
+  background-color: rgb(248, 248, 248);
+  width: 600px;
+  height: 490px;
+  border-radius: 10px;
+}
+.top-head {
+  background-color: rgb(82, 82, 82);
+  padding: 8px;
+  color: white;
+}
+.input-sign-up {
+  /* padding: 25px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+}
+.input-sign-up input {
+  border: 1px solid lightgray;
+  padding: 12px;
+  border-radius: 0px 5px 5px 0px;
+  width: 300px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.input-sign-up input:focus {
+  outline: none !important;
+}
+.input-sign-up span {
+  border: 1px solid #848484;
+  padding: 10px;
+  border-radius: 5px 0px 0px 5px;
+  background-color: #848484;
+  color: white;
+  width: 30px;
+}
+.signup-button {
+  padding: 30px;
+}
+.signup-button button {
+  padding: 12px;
+  margin-bottom: 20px;
+  width: 120px;
+  background-color: #5cb85c;
+  border: 1px solid #5cb85c;
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  float: right;
+  margin-right: 80px;
+}
+.signup-button button:hover {
+  background-color: #45a845;
+  border: 1px solid #73d373;
+  cursor: pointer;
+}
+
+@media (max-width: 604px) {
+  .row-flex {
+    margin-top: 50px;
+    background-color: rgb(248, 248, 248);
+    width: 90%;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 505px) {
+  .input-sign-up input {
+    border: 1px solid lightgray;
+    padding: 12px;
+    border-radius: 0px 5px 5px 0px;
+    width: 70%;
+    font-size: 15px;
+  }
+  .input-sign-up span {
+    border: 1px solid #848484;
+    padding: 10px;
+  }
+}
+@media (max-width: 385px) {
+  .top-head {
+    background-color: rgb(82, 82, 82);
+    padding: 1px;
+    color: white;
+  }
+  .input-sign-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .input-sign-up input {
+    padding: 8px;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 15px;
+  }
+  .input-sign-up span {
+    padding: 6px;
+    border-radius: 5px 0px 0px 5px;
+    background-color: #848484;
+    color: white;
+  }
+}
+
+.flex-signin-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(148, 148, 148);
+}
+.row-flex-signin {
+  margin-top: 50px;
+  background-color: rgb(248, 248, 248);
+  width: 600px;
+  height: 440px;
+  border-radius: 10px;
+}
+.top-head-signin {
+  background-color: rgb(82, 82, 82);
+  padding: 8px;
+  color: white;
+}
+.input-sign-in {
+  /* padding: 25px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+}
+.input-sign-in input {
+  border: 1px solid lightgray;
+  padding: 12px;
+  border-radius: 0px 5px 5px 0px;
+  width: 300px;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.input-sign-in input:focus {
+  outline: none !important;
+}
+.input-sign-in span {
+  border: 1px solid #848484;
+  padding: 10px;
+  border-radius: 5px 0px 0px 5px;
+  background-color: #848484;
+  color: white;
+  width: 30px;
+}
+.sign-in-button {
+  padding: 30px;
+}
+.sign-in-button button {
+  padding: 12px;
+  margin-bottom: 20px;
+  width: 120px;
+  background-color: #5cb85c;
+  border: 1px solid #5cb85c;
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  float: right;
+  margin-right: 80px;
+}
+.sign-in-button button:hover {
+  background-color: #45a845;
+  border: 1px solid #73d373;
+  cursor: pointer;
+}
+
+@media (max-width: 604px) {
+  .row-flex-signin {
+    margin-top: 50px;
+    background-color: rgb(248, 248, 248);
+    width: 90%;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 505px) {
+  .input-sign-in input {
+    border: 1px solid lightgray;
+    padding: 12px;
+    border-radius: 0px 5px 5px 0px;
+    width: 70%;
+    font-size: 15px;
+  }
+  .input-sign-in span {
+    border: 1px solid #848484;
+    padding: 10px;
+  }
+}
+@media (max-width: 385px) {
+  .top-head-signin {
+    background-color: rgb(82, 82, 82);
+    padding: 1px;
+    color: white;
+  }
+  .input-sign-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .input-sign-in input {
+    padding: 8px;
+    border-radius: 0px 5px 5px 0px;
+    font-size: 15px;
+  }
+  .input-sign-in span {
+    padding: 6px;
+    border-radius: 5px 0px 0px 5px;
+    background-color: #848484;
+    color: white;
+  }
+}

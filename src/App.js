@@ -1,12 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Index from "./pages/Main";
+// import Index from "./pages/Main";
 
 function App() {
   return (
     <>
       <div className="container">
-        <Index />
+        {/* <Index /> */}
       </div>
     </>
   );

@@ -1,0 +1,9 @@
+.timer {
+  border: 1px solid #cfcfcf;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: cursive;
+  color: #5a5a5a;
+}

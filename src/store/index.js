@@ -4,6 +4,8 @@ import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import todoReducer from "./reducers/todoReducers";
+import TimerReducer from "./reducers/timerReducer";
+import AuthReducer from "./reducers/AuthReducer";
 
 const persistConfig = {
   key: "root",
@@ -12,6 +14,8 @@ const persistConfig = {
 
 const combineReducer = combineReducers({
   todo: todoReducer,
+  timers : TimerReducer,
+  auths: AuthReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, combineReducer);

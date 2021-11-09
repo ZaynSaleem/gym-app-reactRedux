@@ -6,12 +6,14 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store, persistor } from "./store/";
 import { PersistGate } from "redux-persist/integration/react";
+import Routes from "./config/routes/routes";
+
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <App />
+        <Routes/>
       </PersistGate>
     </Provider>
   </React.StrictMode>,
