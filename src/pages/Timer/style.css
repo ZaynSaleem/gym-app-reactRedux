@@ -6,4 +6,17 @@
   font-weight: 600;
   font-family: cursive;
   color: #5a5a5a;
+  padding: 50px;
+}
+.timer-countdown{
+  display: flex;
+  justify-content: center;
+}
+.exercise{
+  display: flex;
+  justify-content: center;
+}
+.exercise-head{
+  display: flex;
+  justify-content: center;
 }

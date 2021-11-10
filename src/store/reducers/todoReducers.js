@@ -1,36 +1,36 @@
 let initialState111 = {
-  data: [],
+  todo: [],
 };
 
 const reducer = (state = initialState111, action) => {
   switch (action.type) {
     case "add":
-      console.log(action.payload);
+      // console.log(action.payload , "Reducer");
       return {
         ...state,
-        data: [...state.data, action.payload],
+        todo: [...state.todo, action.payload],
       };
     case "DELETE":
-      let dupData = [...state.data];
+      let dupData = [...state.todo];
       let newArr = dupData.filter((x) => x.id !== action.payload);
       console.log(newArr);
       console.log(action.payload);
       return {
         ...state,
-        data: newArr,
+        todo: newArr,
       };
     case "UPDATE":
-      //   console.log(action.payload);
-      let dup = [...state.data];
+        // console.log(action.payload);
+      let dup = [...state.todo];
       let updated = dup.findIndex((x) => x.id === action.payload.id);
-      dup[updated].name = action.payload.name;
-      dup[updated].email = action.payload.email;
-      dup[updated].num = action.payload.num;
+      dup[updated].exercise = action.payload.exercise;
+      dup[updated].startTime = action.payload.startTime;
+      dup[updated].restTime = action.payload.restTime;
 
-      console.log(dup);
+      // console.log(dup);
       return {
         ...state,
-        data: dup,
+        todo: dup,
       };
     default:
       return state;

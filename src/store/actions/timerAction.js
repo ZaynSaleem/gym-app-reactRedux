@@ -1,9 +1,9 @@
-export const countDown = (time, rest) => {
-    console.log(time)
+export const countDown = (countdown, type, exerciseName) => {
+  //  console.log(countdown , "action");
   return (dispatch) => {
     dispatch({
       type: "TIMER",
-      payload: { time, rest },
+      payload: { countdown, type, exerciseName },
     });
   };
 };
