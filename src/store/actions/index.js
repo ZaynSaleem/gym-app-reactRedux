@@ -1,10 +1,10 @@
-export const addTodo = (id, exercise, startTime, restTime, userid ,key) => {
+export const addTodo = (obj) => {
   // console.log(name,email,num);
   // console.log("Action");
   return (dispatch) => {
     dispatch({
       type: "add",
-      payload: { id, exercise, startTime, restTime, userid, key },
+      payload: obj,
     });
   };
 };

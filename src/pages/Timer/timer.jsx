@@ -7,18 +7,21 @@ import { countDown } from "../../store/actions/timerAction";
 
 const Timer = () => {
   useEffect(() => {}, []);
-
+  
   // const state = useSelector(state => state.state)
   const Data = useSelector((state) => state?.timers.data);
   // console.log(Data);
   // const dispatch = useDispatch();
-
+  
   return Data && Data.length ? (
     Data.map((item, index) => {
+      let mins = Math.floor(((item.countdown % 3600) / 60));
+      // console.log(mins);
+      let secs = item.countdown % 60;
       return (
         <div>
           <div className="timer-countdown">
-            <div className="timer">{item.countdown}</div>
+            <div className="timer">{mins} : {secs}</div>
           </div>
 
           <div className="exercise-head">
@@ -29,7 +32,7 @@ const Timer = () => {
           </div>
 
           <div className="d-flex justify-content-center exercise">
-            {item.type === "Started" ? (
+            {item.type === "STARTED" ? (
               <div className="">
                 <img src={exercise} height={450} width={300} />
               </div>
@@ -47,10 +50,10 @@ const Timer = () => {
   ) : (
     <div>
       <div className="timer-countdown">
-        <div className="timer">0</div>
+        <div className="timer">00:00</div>
       </div>
 
-      <div className="d-flex justify-content-center exercise-head">
+      <div className="exercise-head">
         <div className="">
           <h1>EXERCISE STARTED</h1>
           <h1>EXERCISE STARTED</h1>

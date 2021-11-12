@@ -10,8 +10,10 @@ const SignUp = () => {
   const [username, setUserName] = useState("");
   const [pass, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [bool, setBool] = useState(false);
 
   const signUp = async () => {
+    setBool(true);
     await firebase
       .auth()
       .createUserWithEmailAndPassword(email, pass)
@@ -24,6 +26,8 @@ const SignUp = () => {
             email: email,
           })
           .then((docRef) => {
+            setBool(false);
+
             Swal.fire({
               position: "center",
               icon: "success",
@@ -31,14 +35,17 @@ const SignUp = () => {
               showConfirmButton: false,
               timer: 1000,
             });
-            history.push("/home");
+            history.push("/");
           })
           .catch((error) => {
+            setBool(false);
+
             console.error("Error adding document: ", error);
           });
       })
       .catch((error) => {
         console.log(error.message);
+        setBool(false);
         Swal.fire({
           position: "center",
           icon: "error",
@@ -55,47 +62,59 @@ const SignUp = () => {
 
   return (
     <div className="flex-signup-container">
-      <div className="row-flex">
-        <div className="top-head">
-          <h1>SIGN-UP</h1>
+      {bool === false ? (
+        <div className="row-flex">
+          <div className="top-head">
+            <h1>SIGN-UP</h1>
+          </div>
+          <div className="input-sign-up">
+            <span>
+              <FaUser />
+            </span>
+            <input
+              type="text"
+              placeholder="Username"
+              onChange={(event) => setUserName(event.target.value)}
+            />
+          </div>
+          <div className="input-sign-up">
+            <span>
+              <FaEnvelope />
+            </span>
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </div>
+          <div className="input-sign-up">
+            <span>
+              <FaLock />
+            </span>
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </div>
+          <div className="signup-button">
+            <span>
+              Already a user? <a href="/sign-in">click here</a>
+            </span>
+            <div className="btn-signup">
+              <button onClick={signUp}>SignUp</button>
+            </div>
+          </div>
         </div>
-        <div className="input-sign-up">
-          <span>
-            <FaUser />
-          </span>
-          <input
-            type="text"
-            placeholder="Username"
-            onChange={(event) => setUserName(event.target.value)}
-          />
+      ) : (
+        <div class="overlay">
+          <div class="overlay__inner">
+            <div class="overlay__content">
+              <span class="spinner"></span>
+            </div>
+          </div>
         </div>
-        <div className="input-sign-up">
-          <span>
-            <FaEnvelope />
-          </span>
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </div>
-        <div className="input-sign-up">
-          <span>
-            <FaLock />
-          </span>
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </div>
-        <div className="signup-button">
-          <span>
-            Already a user? <a href="#">click here</a>
-          </span>
-          <button onClick={signUp}>SignUp</button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

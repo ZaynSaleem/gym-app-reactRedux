@@ -6,7 +6,6 @@ import Index from "../../pages/Main";
 import Home from "../../pages/Main/home";
 import Timer from "../../pages/Timer/timer";
 
-
 const Routes = () => {
   return (
     <Router>
@@ -17,12 +16,9 @@ const Routes = () => {
         <Route path="/sign-in">
           <SignIn />
         </Route>
-        <PrivateRoute path="/home" component={Home} />
+        {/* <PrivateRoute path="/sign-in" component={SignIn} /> */}
         <PrivateRoute path="/exercise" component={Timer} />
-   
-        {/* <Route path="/">
-          <Index />
-        </Route> */}
+        <PrivateRoute path="/" component={Home} />
       </Switch>
     </Router>
   );
